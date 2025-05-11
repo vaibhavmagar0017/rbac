@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Records List</title>
+</head>
+<body>
+    <h1>Records List</h1>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Role</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.id }}</td>  <!-- Auto-incremented Sr. No -->
+            <td>{{ record.title }}</td>
+            <td>{{ record.description }}</td>
+            <td>{{ record.role }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No records found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+
+</body>
+</html>
