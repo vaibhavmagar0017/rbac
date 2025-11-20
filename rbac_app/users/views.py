@@ -197,6 +197,7 @@ def email_attachment(request):
 
 # send mail on page side
 def send_mail_page(request):
+    """View to handle sending an email based on user input from a form."""
     context = {}
 
     if request.method == 'POST':
