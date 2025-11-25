@@ -44,6 +44,7 @@ def complete_record(request, user_id):
 # -------------------------------------------------
 
 def dashboard(request):
+    """ Render the dashboard page """
     return render(request, 'dashboard.html')
 
 def edit_record(request, record_id):
@@ -92,6 +93,7 @@ def upload_records(request):
 
 
 def login_page(request):
+    """ Handle user login """
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
