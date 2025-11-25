@@ -148,7 +148,6 @@ def register_page(request):  # register_page function is correct, but I'm not cl
 
 @login_required
 def export_records(request):
-    """ Export records to CSV if user is admin """
     if request.user.role == 'admin':
         records = Record.objects.all()
         response = HttpResponse(content_type='text/csv')
@@ -167,7 +166,6 @@ def export_records(request):
 
 
 def user_logout(request):
-    """ Log out the user and redirect to home page """
     logout(request)
     return redirect('/')
 
